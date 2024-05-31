@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: whitesmoke;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    h1{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+    .navbar{
+        background-color: rgb(139, 49, 139);
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    a{
+        color: whitesmoke;
+        font-size: 20px;
+    }
+    .info{
+        width: 800px;
+        margin: 0 auto; 
+        text-align: justify; 
+        line-height: 1.6; 
+        font-size: 20px;
+    }
+    .rowimg{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .colimg img{
+        height: 400px;
+        width: 500px;
+        margin: 10px;
+    }
+    h2{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .job{
+        position: relative;
+        width: 800px;
+        margin: 0 auto 20px auto; 
+        text-align: justify; 
+        line-height: 1.4; 
+        font-size: 18px;
+        border: 2px solid purple;
+        border-radius: 5px;
+        padding: 15PX;        
+    }
+    button{
+        position: absolute;
+        top:50%;
+        right: 30px;
+        transform: translateY(-50%);
+        color: white;
+        background-color: green;
+        border-radius: 3px;
+        width: 80px;
+        height: 25px;
+
+    }
+</style>
+<body>
+    <nav class="navbar">
+        <a><b>Yashodha Technologies LTD</b></a>
+    </nav>
+    <div>
+        <h1>Yashodha Technologies Careers</h1>
+    </div>
+
+    <div class="info">
+        <p>Welcome to the careers page of Yashodha Technologies, a leading Artificial Intelligence (AI) company based in the vibrant city of Bengaluru, Karnataka.</p>
+
+        <p>At Yashodha Technologies, we believe that our strength lies in our team. We’re a diverse group of thinkers and doers, continually reimagining what’s possible to help us all do what we love in new ways. The people who work here have reinvented entire industries with the power of AI. And we believe that we’re just getting started.</p>
+
+        <p>We are committed to fostering a culture of innovation and we understand that it starts with investing in our employees. We offer a dynamic work environment where learning and growth are integral parts of everyday life. Our employees are encouraged to challenge the status quo, push boundaries, and think way outside the box.</p>
+
+        <p>We’re looking for passionate, dedicated individuals who are excited about AI and want to make an impact in this rapidly evolving field. If you’re eager to work on challenging projects and are not afraid of thinking differently, then you might just be the perfect fit for our team.</p>
+
+        <p>Join us in our journey as we continue to transform the world of AI. Explore our current job openings and discover where your talent can take you at Yashodha Technologies.</p>
+    </div>
+
+    <div class="rowimg">
+        <div class="colimg">
+            <img src="/static/ofc1.jpeg" style="height: 400px; width: 500px;" >
+        </div>
+        <div class="colimg">
+            <img src="/static/fc2.jpeg" style="height: 400px; width: 500px;">
+        </div>
+    </div>
+
+    <div class="imge">
+    <div class="rowimg">
+        <div class="colimg">
+            <img src="/static/ofc3.jpeg" style="height: 400px; width: 500px;" >
+        </div>
+        <div class="colimg">
+            <img src="/static/ofc4.jpg" style="height: 400px; width: 500px;">
+        </div>
+    </div>
+    </div>
+
+    <div class="pos">
+        <h2>Open Positions</h2>
+        {% for job in job_pos%}
+        <div class="job">
+            <p class="title"><b>Position: {{job.title}}</b></p>
+            <p><em><b>Experience: </b>{{job.exp}} years</em></p>
+            <p><em><b>Salary: </b>Rs {{job.sal}} per annum</em></p>
+            <p><em><b>Location: </b>{{job.location}}</em></p>
+            <button onclick="window.location.href='/apply'">Apply</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

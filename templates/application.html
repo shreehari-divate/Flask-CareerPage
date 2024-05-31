@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    background-color: black;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 20px;
+}
+    .role, .quali{
+        border: 10px;
+        border-color: aliceblue;
+        margin-bottom: 20px;
+        padding: 20px;
+        width: 800px;
+        box-sizing: border-box;
+    }
+    .apply{
+        border: 10px;
+        border-color: aliceblue;
+        margin-bottom: 20px;
+        padding: 20px;
+        width: 700px;
+        box-sizing: border-box;
+    }
+  
+    .rnq, .q, .ap{
+        display: flex;
+        align-items: center;
+        background-color: maroon;
+        color: whitesmoke;
+        width: 800px;
+        height: 30px;
+        border-top: 30px;
+    }
+    .navbar{
+        background-color: mintcream;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .navbar a{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        color: maroon;
+        text-decoration: none;
+    }
+    form {
+        border: 2px solid whitesmoke;
+        padding: 20px;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        color: whitesmoke;
+        background-color: black;
+        width: 600px;
+    }
+
+    
+</style>
+
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><b>Yashodha Technologies LTD</b></a>        
+        </div>
+      </nav>
+
+      <div class="rnq">
+        <h3>Roles and Responsiblities</h3>
+    </div>   
+    <div class="role">
+   
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p> 
+            <p>Error ullam cum culpa ut sapiente possimus laboriosam delectus corrupti.</p> 
+            <p>Illo fuga dolore temporibus sunt rem perspiciatis deserunt? Eius mollitia cumque dolorum?</p>
+    </div>
+    <br>
+    <div class="q">
+        <h3>Qualification</h3>
+    </div> 
+    <div class="quali">
+   
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p> 
+            <p>Error ullam cum culpa ut sapiente possimus laboriosam delectus corrupti.</p> 
+            <p>Illo fuga dolore temporibus sunt rem perspiciatis deserunt? Eius mollitia cumque dolorum?</p>
+    </div>
+
+    <div class="ap">
+        <h3>Apply</h3>
+    </div> 
+    <div class="apply">
+   
+        <form>
+            <label for="role">Role:</label>
+            <input type="text" name="role" readonly>
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" placeholder="John Doe">
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="xyz@gmail.com">
+
+            <label for="phno">Contact Number:</label>
+            <input type="number" name="phno" placeholder="+91 1234567891">
+
+            <label for="quali">Highest Qualification:</label>
+            <select name="quali">
+                <option value="Bachelors">Bachelors</option>
+                <option value="Masters">Masters</option>
+                <option value="PhD">PhD</option>
+                <option value="Other">PhD</option>
+            </select>
+
+            <label for="spec">Specialization:</label>
+            <input name="spec" type="text" placeholder="A.I Engineering">
+
+            <label for="skills">Skills:</label>
+            <input type="text" name="skills" placeholder="C,C++,Python...">
+
+            <label for="exp">Experience (Years):</label>
+            <input type="number" name="exp" placeholder="e.g. 5">
+
+            <label for="avail">Availability to Join (Days):</label>
+            <input type="number" name="avail" placeholder="e.g. 30">
+
+            <label for="cur_sal">Current Salary(LPA):</label>
+            <input type="number" name="cur_sal" placeholder="e.g. 5">
+
+            <label for="exp_sal">Expected Salary (LPA):</label>
+            <input type="number" name="exp_sal" placeholder="e.g. 7">
+
+            
+            <br><button type="submit">Submit</button>
+        </form>
+    </div>
+    
+
+</body>
+</html>

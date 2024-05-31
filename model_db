@@ -1,0 +1,15 @@
+from app import db, JobPos,app
+from flask_migrate import Migrate
+with app.app_context():
+# Create the database and the database table
+    db.create_all()
+    migrate=Migrate(app,db)
+
+# Insert initial job positions
+    job1 = JobPos(title='AI Engineer', exp=3, sal=1200000, location='Bengaluru, Karnataka')
+    job2 = JobPos(title='Data Scientist', exp=2, sal=1000000, location='Bengaluru, Karnataka')
+
+# Add the jobs to the session and commit
+    db.session.add(job1)
+    db.session.add(job2)
+    db.session.commit()
