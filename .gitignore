@@ -16,7 +16,7 @@ __pycache__/
 env/
 env/*
 
-formail.py
+/formail.py
 
 # Migrations
 migrations/
