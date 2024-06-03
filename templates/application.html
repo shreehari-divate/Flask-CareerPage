@@ -7,125 +7,187 @@
 </head>
 <style>
     body{
-    background-color: black;
-    color: whitesmoke;
-    font-family: 'Times New Roman', Times, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0;
-    padding: 20px;
-}
-    .role, .quali{
-        border: 10px;
-        border-color: aliceblue;
-        margin-bottom: 20px;
-        padding: 20px;
-        width: 800px;
-        box-sizing: border-box;
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
     }
-    .apply{
-        border: 10px;
-        border-color: aliceblue;
-        margin-bottom: 20px;
-        padding: 20px;
-        width: 700px;
-        box-sizing: border-box;
-    }
-  
-    .rnq, .q, .ap{
-        display: flex;
-        align-items: center;
-        background-color: maroon;
-        color: whitesmoke;
-        width: 800px;
-        height: 30px;
-        border-top: 30px;
-    }
+
     .navbar{
-        background-color: mintcream;
+        background-color: rgb(254,254,1);
         height: 40px;
         display: flex;
         align-items: center;
-        width: 100%;
         margin-bottom: 50px;
     }
     .navbar a{
-        font-family: 'Times New Roman', Times, serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 20px;
-        color: maroon;
+        color: black;
         text-decoration: none;
     }
-    form {
-        border: 2px solid whitesmoke;
-        padding: 20px;
-        border-radius: 5px;
-        font-family: Arial, sans-serif;
-        color: whitesmoke;
-        background-color: black;
-        width: 600px;
+
+    .purp{
+        color:rgb(139, 49, 139);
+        text-decoration: underline;
+        font-size: 20px;
     }
 
-    
+    .role{
+        width: 850px;
+        margin: 0 auto;
+        text-align: justify;
+        font-size: 15px;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 0 8px rgba(139,139,139,1);
+        margin-bottom: 50px;
+    }
+
+    .apply{
+        width: 450px;
+        margin: 0 auto;
+        text-align: justify;
+        font-size: 18px;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 0 8px rgba(139,139,139,1);
+    }
+    .purp2{
+        color: rgb(139,49,139);
+        text-decoration: underline;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    form label{
+        display: block;
+        margin-top: 20px; 
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+    }
+    form input,form select,
+    form input[type="file"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin-top: 5px;
+}
+
+    button{
+        margin-top: 30px;
+        background-color: green;
+        padding: 8px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: block;
+        margin: 30px auto;
+    }
+
+
+    .des{
+        color: rgb(139, 49, 139);
+        text-decoration: underline;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+    .msg{
+        text-align: center;
+        font-size: 12px;
+    }
+   
+    .footer{
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(254, 254, 1);
+        color: black;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: 50px;
+    }
 </style>
 
 <body>
     <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/"><b>Yashodha Technologies LTD</b></a>        
+          <a class="navbar-brand" href="/"><b>Yashodha AI</b></a>        
         </div>
-      </nav>
+    </nav>
 
-      <div class="rnq">
-        <h3>Roles and Responsiblities</h3>
-    </div>   
+   
     <div class="role">
-   
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p> 
-            <p>Error ullam cum culpa ut sapiente possimus laboriosam delectus corrupti.</p> 
-            <p>Illo fuga dolore temporibus sunt rem perspiciatis deserunt? Eius mollitia cumque dolorum?</p>
+        
+        <div class="desc">
+            <p class="des"><b>Job Description</b></p>
+            <p>{{job_desc.description.desc}}</p>
+        </div>
+
+        <div class="resp">
+            <p class="purp"><b>Responsiblities</b></p>
+            <ul>
+                {% for item in job_desc.description.resp.split(', ') %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="quali">
+            <p class="purp"><b>Qualification</b></p>
+            <ul>
+                {% for item in job_desc.description.qualif.split(', ') %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
     </div>
-    <br>
-    <div class="q">
-        <h3>Qualification</h3>
-    </div> 
-    <div class="quali">
-   
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p> 
-            <p>Error ullam cum culpa ut sapiente possimus laboriosam delectus corrupti.</p> 
-            <p>Illo fuga dolore temporibus sunt rem perspiciatis deserunt? Eius mollitia cumque dolorum?</p>
+    
+    <div class="prfsk">
+        <p class="purp"><b>Skills</b></p>
+        <ul>
+            {% for item in job_desc.description.pref_skills.split(', ') %}
+                <li>{{item}}</li>
+            {% endfor %}
+        </ul>
     </div>
 
-    <div class="ap">
-        <h3>Apply</h3>
-    </div> 
+            
+    </div>
+
+
     <div class="apply">
-   
-        <form>
+        
+        <p class="purp2"><b>Apply Here</b></p>
+
+        <form method="post" action="/apply/{{job_desc.title}}" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}"/>
             <label for="role">Role:</label>
-            <input type="text" name="role" readonly>
+            <input type="text" name="role" value="{{job_desc.title}}" readonly>
             <label for="name">Full Name:</label>
-            <input type="text" name="name" placeholder="John Doe">
+            <input type="text" name="name" placeholder="John Doe" required>
             <label for="email">Email:</label>
-            <input type="email" name="email" placeholder="xyz@gmail.com">
+            <input type="email" name="email" placeholder="xyz@gmail.com" required>
 
             <label for="phno">Contact Number:</label>
-            <input type="number" name="phno" placeholder="+91 1234567891">
+            <input type="text" name="phno" placeholder="+91-1234567891" required>
 
-            <label for="quali">Highest Qualification:</label>
-            <select name="quali">
-                <option value="Bachelors">Bachelors</option>
-                <option value="Masters">Masters</option>
+            <label for="quali">Highest Degree:</label>
+            <select name="quali" aria-placeholder="None" required>
+                <option value="None">None</option>
+                <option value="Bachelors">Bachelor's Degree</option>
+                <option value="Masters">Master's Degree</option>
                 <option value="PhD">PhD</option>
-                <option value="Other">PhD</option>
+                <option value="Other">Other</option>
             </select>
 
             <label for="spec">Specialization:</label>
-            <input name="spec" type="text" placeholder="A.I Engineering">
+            <input name="spec" type="text" placeholder="A.I Engineering" required>
 
             <label for="skills">Skills:</label>
-            <input type="text" name="skills" placeholder="C,C++,Python...">
+            <input type="text" name="skills" placeholder="C,C++,Python..." required>
 
             <label for="exp">Experience (Years):</label>
             <input type="number" name="exp" placeholder="e.g. 5">
@@ -139,11 +201,17 @@
             <label for="exp_sal">Expected Salary (LPA):</label>
             <input type="number" name="exp_sal" placeholder="e.g. 7">
 
+            <label for="res">Upload your Resume: </label>
+            <input type="file" name="res" value="upload" required>
             
             <br><button type="submit">Submit</button>
+            <p class="msg">{{msg}}</p>
+
         </form>
     </div>
     
-
+    <div class="footer">
+        &copy; 2024 Yashodha AI LTD. All rights reserved.
+    </div>
 </body>
 </html>

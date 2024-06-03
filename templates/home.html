@@ -7,9 +7,9 @@
 </head>
 <style>
     body{
-        background-color: black;
-        color: whitesmoke;
-        font-family: 'Times New Roman', Times, serif;
+        background-color: white;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;        
     }
     h1{
         text-align: center;
@@ -17,21 +17,22 @@
         margin-bottom: 100px;
     }
     .navbar{
-        background-color: rgb(139, 49, 139);
+        background-color: rgb(254, 254, 1);
         height: 40px;
         display: flex;
         align-items: center;
     }
     a{
-        color: whitesmoke;
+        color: black;
         font-size: 20px;
+        text-decoration-line: none;
     }
     .info{
         width: 800px;
         margin: 0 auto; 
         text-align: justify; 
         line-height: 1.6; 
-        font-size: 20px;
+        font-size: 18px;
     }
     .rowimg{
         display: flex;
@@ -49,13 +50,16 @@
         margin-bottom: 40px;
     }
 
+    .title{
+        font-size: 18px;
+    }
     .job{
         position: relative;
         width: 800px;
         margin: 0 auto 20px auto; 
         text-align: justify; 
         line-height: 1.4; 
-        font-size: 18px;
+        font-size: 16px;
         border: 2px solid purple;
         border-radius: 5px;
         padding: 15PX;        
@@ -66,25 +70,39 @@
         right: 30px;
         transform: translateY(-50%);
         color: white;
-        background-color: green;
+        background-color: blue;
         border-radius: 3px;
         width: 80px;
         height: 25px;
+    
 
+    }
+    button:hover{
+        background-color: rgb(0, 128, 0);
+    }
+
+    .footer{
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(254, 254, 1);
+        color: black;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 </style>
 <body>
     <nav class="navbar">
-        <a><b>Yashodha Technologies LTD</b></a>
+        <a href="/"><b>Yashodha AI LTD</b></a>
     </nav>
     <div>
-        <h1>Yashodha Technologies Careers</h1>
+        <h1>Yashodha AI Careers</h1>
     </div>
 
     <div class="info">
-        <p>Welcome to the careers page of Yashodha Technologies, a leading Artificial Intelligence (AI) company based in the vibrant city of Bengaluru, Karnataka.</p>
+        <p>Welcome to the careers page of Yashodha AI, a leading Artificial Intelligence (AI) company based in the vibrant city of Bengaluru, Karnataka.</p>
 
-        <p>At Yashodha Technologies, we believe that our strength lies in our team. We’re a diverse group of thinkers and doers, continually reimagining what’s possible to help us all do what we love in new ways. The people who work here have reinvented entire industries with the power of AI. And we believe that we’re just getting started.</p>
+        <p>At Yashodha AI, we believe that our strength lies in our team. We’re a diverse group of thinkers and doers, continually reimagining what’s possible to help us all do what we love in new ways. The people who work here have reinvented entire industries with the power of AI. And we believe that we’re just getting started.</p>
 
         <p>We are committed to fostering a culture of innovation and we understand that it starts with investing in our employees. We offer a dynamic work environment where learning and growth are integral parts of everyday life. Our employees are encouraged to challenge the status quo, push boundaries, and think way outside the box.</p>
 
@@ -95,20 +113,20 @@
 
     <div class="rowimg">
         <div class="colimg">
-            <img src="/static/ofc1.jpeg" style="height: 400px; width: 500px;" >
+            <img src="/static/ofc1.jpeg" style="height: 300px; width: 400px;" >
         </div>
         <div class="colimg">
-            <img src="/static/fc2.jpeg" style="height: 400px; width: 500px;">
+            <img src="/static/fc2.jpg" style="height: 300px; width: 400px;">
         </div>
     </div>
 
     <div class="imge">
     <div class="rowimg">
         <div class="colimg">
-            <img src="/static/ofc3.jpeg" style="height: 400px; width: 500px;" >
+            <img src="/static/ofc3.jpeg" style="height: 300px; width: 400px;" >
         </div>
         <div class="colimg">
-            <img src="/static/ofc4.jpg" style="height: 400px; width: 500px;">
+            <img src="/static/ofc4.jpg" style="height: 300px; width: 400px;">
         </div>
     </div>
     </div>
@@ -119,11 +137,15 @@
         <div class="job">
             <p class="title"><b>Position: {{job.title}}</b></p>
             <p><em><b>Experience: </b>{{job.exp}} years</em></p>
-            <p><em><b>Salary: </b>Rs {{job.sal}} per annum</em></p>
+            <p><em><b>Salary: </b>Rs {{job.sal}}</em></p>
             <p><em><b>Location: </b>{{job.location}}</em></p>
-            <button onclick="window.location.href='/apply'">Apply</button>
+            <button onclick="window.location.href='/apply/{{job.title}}'">Apply</button>
         </div>
         {% endfor %}
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Yashodha AI LTD. All rights reserved.
     </div>
 </body>
 </html>
