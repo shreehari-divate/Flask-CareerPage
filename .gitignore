@@ -9,11 +9,14 @@ __pycache__/
 *.sqlite
 *.mysql
 
+
 # Environments
 .env
 .env/*
 env/
 env/*
+
+formail.py
 
 # Migrations
 migrations/
