@@ -9,30 +9,49 @@
     body{
         background-color: white;
         color: black;
-        font-family: Arial, Helvetica, sans-serif;        
+        font-family: Georgia, 'Times New Roman', Times, serif;        
+    }
+    .head{
+        width: 100%;
+        height: 300px;
+        background-color: rgb(62, 2, 62);
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hp{
+        text-align: center;
+        font-size: 40px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: white;
     }
     h1{
         text-align: center;
-        margin-top: 50px;
+        margin-top: 100px;
         margin-bottom: 100px;
     }
-    .navbar{
-        background-color: rgb(254, 254, 1);
-        height: 40px;
-        display: flex;
-        align-items: center;
-    }
-    a{
-        color: black;
-        font-size: 20px;
-        text-decoration-line: none;
-    }
+
     .info{
         width: 800px;
         margin: 0 auto; 
         text-align: justify; 
         line-height: 1.6; 
-        font-size: 18px;
+    }
+    .abts,.hir{
+        box-shadow: 0 0 10px rgba(139,139,139,1);
+        margin: 0 auto;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 50px;
+
+    }
+    .titles{
+        color: rgb(62, 2, 62);
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
     }
     .rowimg{
         display: flex;
@@ -40,9 +59,12 @@
         margin-bottom: 20px;
     }
     .colimg img{
-        height: 400px;
-        width: 500px;
+        max-height: 400px;
+        width: 100%;
         margin: 10px;
+        border: 1px; 
+        box-shadow: 0px 0px 15px rgba(139,139,139,0.5); 
+        border-radius: 10px;
     }
     h2{
         text-align: center;
@@ -84,7 +106,7 @@
     .footer{
         text-align: center;
         padding: 10px;
-        background-color: rgb(254, 254, 1);
+        background-color: whitesmoke;
         color: black;
         left: 0;
         bottom: 0;
@@ -92,23 +114,32 @@
     }
 </style>
 <body>
-    <nav class="navbar">
-        <a href="/"><b>Yashodha AI LTD</b></a>
-    </nav>
+
+    <div class="head">
+        <p class="hp">Pioneering Change with AI Technology</p>
+    </div>
+
     <div>
         <h1>Yashodha AI Careers</h1>
     </div>
 
+
+
     <div class="info">
-        <p>Welcome to the careers page of Yashodha AI, a leading Artificial Intelligence (AI) company based in the vibrant city of Bengaluru, Karnataka.</p>
+        <div class="abts"><p class="titles">About Us</p>
+            <p>Welcome to the careers page of Yashodha AI, a leading Artificial Intelligence (AI) company based in the vibrant city of Bengaluru, Karnataka.</p>
+            <p>At Yashodha AI, we believe that our strength lies in our team. We’re a diverse group of thinkers and doers, continually reimagining what’s possible to help us all do what we love in new ways. The people who work here have reinvented entire industries with the power of AI. And we believe that we’re just getting started.</p>
+            <p>We are committed to fostering a culture of innovation and we understand that it starts with investing in our employees. We offer a dynamic work environment where learning and growth are integral parts of everyday life. Our employees are encouraged to challenge the status quo, push boundaries, and think way outside the box.</p>
+            <p>Join us in our journey as we continue to transform the world of AI. Explore our current job openings and discover where your talent can take you at Yashodha Technologies.</p>
 
-        <p>At Yashodha AI, we believe that our strength lies in our team. We’re a diverse group of thinkers and doers, continually reimagining what’s possible to help us all do what we love in new ways. The people who work here have reinvented entire industries with the power of AI. And we believe that we’re just getting started.</p>
+        </div>
+        <div class="hir">
+            <p class="titles">Seeking Innovators in A.I</p>
+            <p>We are looking for passionate, dedicated individuals who are excited about AI and want to make an impact in this rapidly evolving field. If you’re eager to work on challenging projects and are not afraid of thinking differently, then you might just be the perfect fit for our team.</p>
 
-        <p>We are committed to fostering a culture of innovation and we understand that it starts with investing in our employees. We offer a dynamic work environment where learning and growth are integral parts of everyday life. Our employees are encouraged to challenge the status quo, push boundaries, and think way outside the box.</p>
+        </div>
 
-        <p>We’re looking for passionate, dedicated individuals who are excited about AI and want to make an impact in this rapidly evolving field. If you’re eager to work on challenging projects and are not afraid of thinking differently, then you might just be the perfect fit for our team.</p>
-
-        <p>Join us in our journey as we continue to transform the world of AI. Explore our current job openings and discover where your talent can take you at Yashodha Technologies.</p>
+        
     </div>
 
     <div class="rowimg">

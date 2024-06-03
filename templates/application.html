@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Application</title>
 </head>
 <style>
     body{
@@ -14,7 +14,7 @@
     }
 
     .navbar{
-        background-color: rgb(254,254,1);
+        background-color: rgb(62,2,62);
         height: 40px;
         display: flex;
         align-items: center;
@@ -23,7 +23,7 @@
     .navbar a{
         font-family: Arial, Helvetica, sans-serif;
         font-size: 20px;
-        color: black;
+        color: white;
         text-decoration: none;
     }
 
@@ -103,7 +103,7 @@
     .footer{
         text-align: center;
         padding: 10px;
-        background-color: rgb(254, 254, 1);
+        background-color: whitesmoke;
         color: black;
         left: 0;
         bottom: 0;
@@ -202,7 +202,7 @@
             <input type="number" name="exp_sal" placeholder="e.g. 7">
 
             <label for="res">Upload your Resume: </label>
-            <input type="file" name="res" value="upload" required>
+            <input type="file" name="res" value="upload" accept=".pdf,.doc,.docx" required>
             
             <br><button type="submit">Submit</button>
             <p class="msg">{{msg}}</p>

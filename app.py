@@ -1,6 +1,6 @@
 import os
 import smtplib
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, flash, redirect, render_template, request, url_for
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -99,15 +99,14 @@ def apply(job_title):
                         )
             db.session.add(user)
             db.session.commit()
-            print('Data has been stored successfully')
+            flash('Application Submitted Successfully','success')
             try:
                 message = Message('Application recieved',sender=os.getenv('MAIL_USERNAME'),recipients=[email])
                 message.body=f'Thank You {name} for showing your interest at Yashodha Technologies for {job_title} role.\nWe have recieved your application and will get back to you as soon as possible.\n\nRegards,\nYashodha Technologies LTD'
                 mail.send(message)
             except smtplib.SMTPAuthenticationError:
-                print("SMTP Auth error has occured")
-            return redirect(url_for('success',name=name))
-
+                #print("SMTP Auth error has occured")
+                return redirect(url_for('success',name=name))
     return render_template("application.html",job_desc=job_desc,csrf_token=csrf_token)
 
 @app.route('/success<name>')
