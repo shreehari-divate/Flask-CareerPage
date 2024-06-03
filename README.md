@@ -3,7 +3,7 @@
 ## Description
 This is a career page built using Flask framework.
 
-##Requirements
+## Requirements
 Python
 <br>HTML and CSS
 <br>MySQL
