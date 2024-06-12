@@ -13,6 +13,7 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=os.getenv('MAIL_PORT')
 app.config['MAIL_USERNAME']=os.getenv('MAIL_USERNAME')
