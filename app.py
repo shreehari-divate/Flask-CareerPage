@@ -7,6 +7,7 @@ from flask_migrate import Migrate
 from fileinput import filename
 from dotenv import load_dotenv
 from flask_wtf.csrf import generate_csrf
+import pymysql
 load_dotenv()
 
 
