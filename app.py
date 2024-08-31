@@ -19,8 +19,8 @@ app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=os.getenv('MAIL_PORT')
 app.config['MAIL_USERNAME']=os.getenv('MAIL_USERNAME')
 app.config['MAIL_PASSWORD']=os.getenv('MAIL_PASSWORD')
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
 mail=Mail(app)
 
 db = SQLAlchemy(app)
@@ -40,8 +40,8 @@ class User(db.Model):
     avail = db.Column(db.Integer,nullable=False)
     cur_sal = db.Column(db.Integer,nullable=False)
     exp_sal = db.Column(db.Integer,nullable=False)
-    filename = db.Column(db.String(20),nullable=False)
-    file = db.Column(db.LargeBinary)
+    filename = db.Column(db.String(255),nullable=False)
+    file = db.Column(db.LargeBinary(length=(2**32)-1)) 
 
 class JobPos(db.Model):
     id = db.Column(db.Integer,primary_key=True)
@@ -101,14 +101,17 @@ def apply(job_title):
                         )
             db.session.add(user)
             db.session.commit()
-            flash('Application Submitted Successfully','success')
+            #flash('Application Submitted Successfully','success')
             try:
                 message = Message('Application recieved',sender=os.getenv('MAIL_USERNAME'),recipients=[email])
                 message.body=f'Thank You {name} for showing your interest at Yashodha Technologies for {job_title} role.\nWe have recieved your application and will get back to you as soon as possible.\n\nRegards,\nYashodha Technologies LTD'
                 mail.send(message)
+                print("Mail sent successfuly")
+                #flash("Email has been sent successfuly!!",'success')
             except smtplib.SMTPAuthenticationError:
-                #print("SMTP Auth error has occured")
+                print("SMTP Auth error has occured")
                 return redirect(url_for('success',name=name))
+            return redirect(url_for('success',name=name))
     return render_template("application.html",job_desc=job_desc,csrf_token=csrf_token)
 
 @app.route('/success<name>')
